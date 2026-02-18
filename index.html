@@ -6,9 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Just Touch | Menú Digital Inteligente</title>
 
-  <!-- FAVICON -->
   <link rel="icon" type="image/png" href="Assets/JustTouchIcon.png">
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -49,13 +47,8 @@
       z-index: 1000;
     }
 
-    nav a img {
+    nav img {
       width: 120px;
-      transition: 0.2s;
-    }
-
-    nav a img:hover {
-      transform: scale(1.05);
     }
 
     nav ul {
@@ -82,11 +75,6 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 20px;
-    }
-
-    .hero-content {
-      max-width: 800px;
     }
 
     .hero h1 {
@@ -100,7 +88,6 @@
     }
 
     .btn {
-      display: inline-block;
       padding: 15px 35px;
       border-radius: 40px;
       background: var(--primario);
@@ -108,12 +95,10 @@
       text-decoration: none;
       font-weight: 600;
       transition: 0.3s;
-      box-shadow: 0 10px 30px rgba(0, 168, 232, 0.4);
     }
 
     .btn:hover {
       background: var(--cuarto);
-      transform: scale(1.05);
     }
 
     section {
@@ -143,16 +128,11 @@
       background: var(--secundario);
       padding: 30px;
       border-radius: 20px;
-      transition: 0.3s;
     }
 
     .section-light .card {
       background: var(--primario);
       color: var(--blanco);
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
     }
 
     .problem-text {
@@ -167,20 +147,6 @@
       font-size: 1rem;
       color: #005F73;
       font-weight: 600;
-    }
-
-    @media(max-width: 768px) {
-      nav {
-        padding: 15px 20px;
-      }
-
-      section {
-        padding: 80px 20px;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-      }
     }
   </style>
 </head>
@@ -200,7 +166,7 @@
   </nav>
 
   <section class="hero">
-    <div class="hero-content">
+    <div>
       <h1>Tu Restaurante, 100% Digital</h1>
       <p>Menú QR, pedidos automáticos y notificaciones instantáneas.</p>
       <a href="#contacto" class="btn">Quiero una llamada 1 a 1</a>
@@ -232,15 +198,26 @@
   <section id="problema" class="section-light">
     <h2>El Verdadero Problema</h2>
     <p class="problem-text">
-      Clientes esperando. Mozos desbordados. Pedidos mal anotados.
-      Cada error es dinero perdido. Cada demora es una mala reseña.
+      Clientes esperando. Mozos corriendo. Pedidos mal anotados.
+      Mesas que no rotan y errores que se repiten todos los días.
+      <br><br>
+      La mayoría de los restaurantes no pierde dinero por falta de clientes,
+      sino por procesos lentos, desordenados y sistemas que ya quedaron en el pasado.
+      <br><br>
+      Just Touch elimina el caos y convierte tu operación en un sistema ágil,
+      moderno y mucho más rentable.
     </p>
   </section>
 
   <section id="nosotros">
     <h2>Acerca de Nosotros</h2>
     <p class="problem-text">
-      Creamos Just Touch para restaurantes que quieren dar el salto digital.
+      Creamos Just Touch a partir de un problema real: restaurantes con gran comida,
+      pero con procesos poco eficientes y totalmente analógicos.
+      <br><br>
+      Nuestro objetivo es ayudarte a digitalizar tu operación,
+      mejorar la experiencia del cliente y aumentar tus ventas,
+      con tecnología simple, intuitiva y pensada para el mundo gastronómico real.
     </p>
   </section>
 
@@ -248,7 +225,7 @@
     <h2>Agendá una Llamada 1 a 1</h2>
     <p style="max-width:700px;margin:auto;margin-bottom:40px;">
       Coordinemos una llamada privada de 30 minutos donde analizamos tu restaurante
-      y te muestro cómo Just Touch puede ayudarte específicamente en tu caso.
+      y vemos cómo Just Touch puede ayudarte específicamente en tu caso.
     </p>
 
     <a href="https://calendly.com/franmadev8/30min" class="btn" target="_blank">
