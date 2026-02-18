@@ -36,7 +36,6 @@
       color: var(--blanco);
     }
 
-    /* NAVBAR */
     nav {
       position: fixed;
       width: 100%;
@@ -52,7 +51,6 @@
 
     nav a img {
       width: 120px;
-      cursor: pointer;
       transition: 0.2s;
     }
 
@@ -70,14 +68,12 @@
       text-decoration: none;
       color: var(--blanco);
       font-weight: 500;
-      transition: 0.3s;
     }
 
     nav a:hover {
       color: var(--primario);
     }
 
-    /* HERO */
     .hero {
       height: 100vh;
       background: linear-gradient(rgba(8, 44, 51, 0.75), rgba(8, 44, 51, 0.75)),
@@ -120,7 +116,6 @@
       transform: scale(1.05);
     }
 
-    /* SECTIONS */
     section {
       padding: 100px 60px;
       text-align: center;
@@ -167,7 +162,13 @@
       line-height: 1.8;
     }
 
-    /* RESPONSIVE */
+    .urgencia {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #005F73;
+      font-weight: 600;
+    }
+
     @media(max-width: 768px) {
       nav {
         padding: 15px 20px;
@@ -187,7 +188,6 @@
 <body>
 
   <nav>
-    <!-- LOGO LOCAL -->
     <a href="#">
       <img src="Assets/JustTouchLogo.png" alt="Just Touch Logo">
     </a>
@@ -202,8 +202,8 @@
   <section class="hero">
     <div class="hero-content">
       <h1>Tu Restaurante, 100% Digital</h1>
-      <p>Menú QR, pedidos automáticos y notificaciones instantáneas. Más control, más velocidad, más ventas.</p>
-      <a href="#contacto" class="btn">Quiero saber más</a>
+      <p>Menú QR, pedidos automáticos y notificaciones instantáneas.</p>
+      <a href="#contacto" class="btn">Quiero una llamada 1 a 1</a>
     </div>
   </section>
 
@@ -212,19 +212,19 @@
     <div class="grid">
       <div class="card">
         <h3>Menú Editable</h3>
-        <p>Gestioná productos, precios y categorías en tiempo real sin volver a imprimir.</p>
+        <p>Gestioná productos en tiempo real.</p>
       </div>
       <div class="card">
         <h3>Pedidos desde QR</h3>
-        <p>El cliente escanea y ordena directo desde su celular.</p>
+        <p>El cliente ordena desde su celular.</p>
       </div>
       <div class="card">
         <h3>WhatsApp Automático</h3>
-        <p>Recibí notificaciones instantáneas de cada pedido.</p>
+        <p>Notificaciones instantáneas.</p>
       </div>
       <div class="card">
         <h3>Marca Personalizada</h3>
-        <p>Logo, colores y experiencia adaptados a tu restaurante.</p>
+        <p>Experiencia adaptada a tu restaurante.</p>
       </div>
     </div>
   </section>
@@ -233,9 +233,7 @@
     <h2>El Verdadero Problema</h2>
     <p class="problem-text">
       Clientes esperando. Mozos desbordados. Pedidos mal anotados.
-      Mesas que no rotan.
-      Cada error es dinero perdido. Cada demora es una mala reseña futura.
-      Just Touch elimina el caos y transforma tu operación en un sistema ágil, ordenado y profesional.
+      Cada error es dinero perdido. Cada demora es una mala reseña.
     </p>
   </section>
 
@@ -243,24 +241,26 @@
     <h2>Acerca de Nosotros</h2>
     <p class="problem-text">
       Creamos Just Touch para restaurantes que quieren dar el salto digital.
-      Nuestro enfoque es simple: simplificar tu operación y potenciar tus ventas.
-      Tecnología intuitiva, moderna y pensada para el mundo gastronómico real.
     </p>
   </section>
 
   <section id="contacto" class="section-light">
-    <h2>Agendá una Demo Personalizada</h2>
+    <h2>Agendá una Llamada 1 a 1</h2>
     <p style="max-width:700px;margin:auto;margin-bottom:40px;">
-      Coordinemos una reunión de 30 minutos donde te muestro cómo Just Touch puede transformar tu restaurante.
-      Elegí el día y horario que mejor te quede.
+      Coordinemos una llamada privada de 30 minutos donde analizamos tu restaurante
+      y te muestro cómo Just Touch puede ayudarte específicamente en tu caso.
     </p>
 
-    <a href="https://calendly.com/franmadev8/30min" class="btn" target="_blank" rel="noopener noreferrer">
-      Agendar demo ahora
+    <a href="https://calendly.com/franmadev8/30min" class="btn" target="_blank">
+      Reservar llamada ahora
     </a>
 
-    <p style="margin-top:15px;font-size:0.9rem;opacity:0.7;">
-      Se abre en una nueva pestaña · 30 minutos · Gratis
+    <p class="urgencia">
+      Cupos limitados por semana para mantener la calidad del servicio.
+    </p>
+
+    <p style="margin-top:10px;font-size:0.9rem;opacity:0.7;">
+      Se abre en una nueva pestaña · 30 minutos · Llamada privada
     </p>
   </section>
 
