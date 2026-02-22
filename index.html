@@ -2,249 +2,442 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Just Touch | Menú Digital Inteligente</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" href="Assets/JustTouchIcon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Just Touch | Menú Digital Inteligente</title>
 
-  <style>
-    :root {
-      --blanco: #ffffff;
-      --primario: #00A8E8;
-      --secundario: #005F73;
-      --terciario: #082C33;
-      --cuarto: #16BDFF;
-    }
+<link rel="icon" type="image/png" href="Assets/JustTouchIcon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+<style>
 
-    html {
-      scroll-behavior: smooth;
-    }
+:root{
+--blanco:#ffffff;
+--primario:#00A8E8;
+--secundario:#005F73;
+--terciario:#082C33;
+--cuarto:#16BDFF;
+}
 
-    body {
-      background: var(--terciario);
-      color: var(--blanco);
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-    nav {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      background: rgba(8, 44, 51, 0.9);
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 60px;
-      z-index: 1000;
-    }
+html{
+scroll-behavior:smooth;
+}
 
-    nav img {
-      width: 120px;
-    }
+body{
+background:var(--terciario);
+color:var(--blanco);
+}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
+/* NAV */
 
-    nav a {
-      text-decoration: none;
-      color: var(--blanco);
-      font-weight: 500;
-    }
+nav{
+position:fixed;
+width:100%;
+top:0;
+background:rgba(8,44,51,0.9);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 60px;
+z-index:1000;
+}
 
-    nav a:hover {
-      color: var(--primario);
-    }
+nav img{
+width:120px;
+}
 
-    .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(8, 44, 51, 0.75), rgba(8, 44, 51, 0.75)),
-        url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+nav ul{
+list-style:none;
+display:flex;
+gap:30px;
+}
 
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-    }
+nav a{
+text-decoration:none;
+color:var(--blanco);
+font-weight:500;
+}
 
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-    }
+nav a:hover{
+color:var(--primario);
+}
 
-    .btn {
-      padding: 15px 35px;
-      border-radius: 40px;
-      background: var(--primario);
-      color: var(--blanco);
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
+.demo-link{
+color:var(--primario);
+font-weight:700;
+}
 
-    .btn:hover {
-      background: var(--cuarto);
-    }
+/* HERO */
 
-    section {
-      padding: 100px 60px;
-      text-align: center;
-    }
+.hero{
+height:100vh;
+background:linear-gradient(rgba(8,44,51,0.75),rgba(8,44,51,0.75)),
+url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1500&q=80')
+center/cover no-repeat;
 
-    .section-light {
-      background: var(--blanco);
-      color: var(--terciario);
-    }
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
 
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-    }
+.hero h1{
+font-size:3.5rem;
+margin-bottom:20px;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      max-width: 1200px;
-      margin: auto;
-    }
+.hero p{
+font-size:1.2rem;
+margin-bottom:30px;
+}
 
-    .card {
-      background: var(--secundario);
-      padding: 30px;
-      border-radius: 20px;
-    }
+.hero-buttons{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
 
-    .section-light .card {
-      background: var(--primario);
-      color: var(--blanco);
-    }
+/* BOTONES */
 
-    .problem-text {
-      max-width: 900px;
-      margin: auto;
-      font-size: 1.2rem;
-      line-height: 1.8;
-    }
+.btn{
+padding:15px 35px;
+border-radius:40px;
+background:var(--primario);
+color:var(--blanco);
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+display:inline-block;
+}
 
-    .urgencia {
-      margin-top: 20px;
-      font-size: 1rem;
-      color: #005F73;
-      font-weight: 600;
-    }
-  </style>
+.btn:hover{
+background:var(--cuarto);
+}
+
+.btn-outline{
+border:2px solid var(--primario);
+background:transparent;
+}
+
+.btn-outline:hover{
+background:var(--primario);
+}
+
+/* SECTIONS */
+
+section{
+padding:100px 60px;
+text-align:center;
+}
+
+.section-light{
+background:var(--blanco);
+color:var(--terciario);
+}
+
+h2{
+font-size:2.5rem;
+margin-bottom:40px;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:var(--secundario);
+padding:30px;
+border-radius:20px;
+}
+
+.section-light .card{
+background:var(--primario);
+color:var(--blanco);
+}
+
+/* TEXTOS */
+
+.problem-text{
+max-width:900px;
+margin:auto;
+font-size:1.2rem;
+line-height:1.8;
+}
+
+.urgencia{
+margin-top:20px;
+font-size:1rem;
+color:#005F73;
+font-weight:600;
+}
+
+/* DEMO SECTION */
+
+.demo-box{
+
+max-width:900px;
+margin:auto;
+
+}
+
+.demo-box p{
+font-size:1.2rem;
+margin-bottom:30px;
+}
+
+</style>
 </head>
 
 <body>
 
-  <nav>
-    <a href="#">
-      <img src="Assets/JustTouchLogo.png" alt="Just Touch Logo">
-    </a>
-    <ul>
-      <li><a href="#funciona">Cómo Funciona</a></li>
-      <li><a href="#problema">Problemas</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
+<nav>
 
-  <section class="hero">
-    <div>
-      <h1>Tu Restaurante, 100% Digital</h1>
-      <p>Menú QR, pedidos automáticos y notificaciones instantáneas.</p>
-      <a href="#contacto" class="btn">Quiero una llamada 1 a 1</a>
-    </div>
-  </section>
+<a href="#">
+<img src="Assets/JustTouchLogo.png">
+</a>
 
-  <section id="funciona">
-    <h2>¿Qué Puede Hacer Just Touch?</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Menú Editable</h3>
-        <p>Gestioná productos en tiempo real.</p>
-      </div>
-      <div class="card">
-        <h3>Pedidos desde QR</h3>
-        <p>El cliente ordena desde su celular.</p>
-      </div>
-      <div class="card">
-        <h3>WhatsApp Automático</h3>
-        <p>Notificaciones instantáneas.</p>
-      </div>
-      <div class="card">
-        <h3>Marca Personalizada</h3>
-        <p>Experiencia adaptada a tu restaurante.</p>
-      </div>
-    </div>
-  </section>
+<ul>
 
-  <section id="problema" class="section-light">
-    <h2>El Verdadero Problema</h2>
-    <p class="problem-text">
-      Clientes esperando. Mozos corriendo. Pedidos mal anotados.
-      Mesas que no rotan y errores que se repiten todos los días.
-      <br><br>
-      La mayoría de los restaurantes no pierde dinero por falta de clientes,
-      sino por procesos lentos, desordenados y sistemas que ya quedaron en el pasado.
-      <br><br>
-      Just Touch elimina el caos y convierte tu operación en un sistema ágil,
-      moderno y mucho más rentable.
-    </p>
-  </section>
+<li><a href="#funciona">Cómo Funciona</a></li>
 
-  <section id="nosotros">
-    <h2>Acerca de Nosotros</h2>
-    <p class="problem-text">
-      Creamos Just Touch a partir de un problema real: restaurantes con gran comida,
-      pero con procesos poco eficientes y totalmente analógicos.
-      <br><br>
-      Nuestro objetivo es ayudarte a digitalizar tu operación,
-      mejorar la experiencia del cliente y aumentar tus ventas,
-      con tecnología simple, intuitiva y pensada para el mundo gastronómico real.
-    </p>
-  </section>
+<li><a href="#demo" class="demo-link">Demo</a></li>
 
-  <section id="contacto" class="section-light">
-    <h2>Agendá una Llamada 1 a 1</h2>
-    <p style="max-width:700px;margin:auto;margin-bottom:40px;">
-      Coordinemos una llamada privada de 30 minutos donde analizamos tu restaurante
-      y vemos cómo Just Touch puede ayudarte específicamente en tu caso.
-    </p>
+<li><a href="#problema">Problemas</a></li>
 
-    <a href="https://calendly.com/franmadev8/30min" class="btn" target="_blank">
-      Reservar llamada ahora
-    </a>
+<li><a href="#nosotros">Nosotros</a></li>
 
-    <p class="urgencia">
-      Cupos limitados por semana para mantener la calidad del servicio.
-    </p>
+<li><a href="#contacto">Contacto</a></li>
 
-    <p style="margin-top:10px;font-size:0.9rem;opacity:0.7;">
-      Se abre en una nueva pestaña · 30 minutos · Llamada privada
-    </p>
-  </section>
+</ul>
 
-  <footer style="text-align:center;padding:40px;background:#041d22;">
-    © 2026 Just Touch - Todos los derechos reservados
-  </footer>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div>
+
+<h1>Tu Restaurante, 100% Digital</h1>
+
+<p>
+Menú QR, pedidos automáticos y notificaciones instantáneas.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#contacto" class="btn">
+Quiero una llamada 1 a 1
+</a>
+
+<a href="https://justtouch-website-demo.onrender.com"
+target="_blank"
+class="btn btn-outline">
+
+Probar Demo Gratis
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FUNCIONA -->
+
+<section id="funciona">
+
+<h2>¿Qué Puede Hacer Just Touch?</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Menú Editable</h3>
+
+<p>
+Gestioná productos en tiempo real.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Pedidos desde QR</h3>
+
+<p>
+El cliente ordena desde su celular.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>WhatsApp Automático</h3>
+
+<p>
+Notificaciones instantáneas.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Marca Personalizada</h3>
+
+<p>
+Experiencia adaptada a tu restaurante.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- DEMO -->
+
+<section id="demo" class="section-light">
+
+<h2>Probá Just Touch en Vivo</h2>
+
+<div class="demo-box">
+
+<p>
+
+Explorá una demo real de Just Touch y experimentá
+cómo sería tener tu restaurante totalmente digitalizado.
+
+</p>
+
+<a href="https://justtouch-website-demo.onrender.com"
+target="_blank"
+class="btn">
+
+Ver Demo en Vivo
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- PROBLEMA -->
+
+<section id="problema" class="section-light">
+
+<h2>El Verdadero Problema</h2>
+
+<p class="problem-text">
+
+Clientes esperando.
+Mozos corriendo.
+Pedidos mal anotados.
+
+<br><br>
+
+La mayoría de los restaurantes no pierde dinero
+por falta de clientes, sino por procesos lentos
+y sistemas que quedaron en el pasado.
+
+<br><br>
+
+Just Touch elimina el caos y convierte
+tu operación en un sistema ágil y rentable.
+
+</p>
+
+</section>
+
+
+
+<!-- NOSOTROS -->
+
+<section id="nosotros">
+
+<h2>Acerca de Nosotros</h2>
+
+<p class="problem-text">
+
+Creamos Just Touch a partir de un problema real:
+restaurantes con gran comida pero procesos poco eficientes.
+
+<br><br>
+
+Nuestro objetivo es ayudarte a digitalizar tu operación
+y aumentar tus ventas con tecnología simple.
+
+</p>
+
+</section>
+
+
+
+<!-- CONTACTO -->
+
+<section id="contacto" class="section-light">
+
+<h2>Agendá una Llamada 1 a 1</h2>
+
+<p style="max-width:700px;margin:auto;margin-bottom:40px;">
+
+Analizamos tu restaurante y vemos
+cómo Just Touch puede ayudarte.
+
+</p>
+
+<a href="https://calendly.com/franmadev8/30min"
+class="btn"
+target="_blank">
+
+Reservar llamada ahora
+
+</a>
+
+
+<p class="urgencia">
+
+Cupos limitados por semana
+
+</p>
+
+</section>
+
+
+
+<footer style="text-align:center;padding:40px;background:#041d22;">
+
+© 2026 Just Touch
+
+</footer>
 
 </body>
-
 </html>
