@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JustTouch — Menú Digital para Restaurantes</title>
-  <link type="icon" href="./Assets/JustTouchIcon.png"/>
-  <meta name="description" content="JustTouch es un SaaS de menú digital para restaurantes: mejora la experiencia del cliente, acelera pedidos y aumenta ventas. Prueba nuestra demo externa o agenda una llamada." />
+  <link rel="icon" type="image/png" href="./assets/JustTouchLogo.png">
+  <meta name="description"
+    content="JustTouch es un SaaS de menú digital para restaurantes: mejora la experiencia del cliente, acelera pedidos y aumenta ventas. Prueba nuestra demo externa o agenda una llamada." />
   <meta name="keywords" content="menú digital, SaaS, restaurante, carta digital, pedidos, JustTouch, QR" />
 
   <script type="application/ld+json">
@@ -32,12 +34,21 @@
       --orange: #E05F02;
       --max-width: 1100px;
       --radius: 12px;
-      --shadow: 0 10px 40px rgba(8,44,51,0.1);
-      --muted: rgba(8,44,51,0.6);
+      --shadow: 0 10px 40px rgba(8, 44, 51, 0.1);
+      --muted: rgba(8, 44, 51, 0.6);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html,body { height: 100%; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
     body {
       font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       color: var(--dark);
@@ -47,127 +58,438 @@
       overflow-x: hidden;
     }
 
-    .container { width: 90%; max-width: var(--max-width); margin: 0 auto; }
+    .container {
+      width: 90%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
 
     /* Header */
     header {
-      position: sticky; top: 0; z-index: 120;
-      background: rgba(255,255,255,0.96);
+      position: sticky;
+      top: 0;
+      z-index: 120;
+      background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(8,44,51,0.05);
+      border-bottom: 1px solid rgba(8, 44, 51, 0.05);
     }
-    .nav {
-      display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0;
-    }
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .brand img { height: 50px; width: 50px; border-radius: 50%; object-fit: cover; }
-    .brand h1 { font-size: 20px; color: var(--blue-2); margin: 0; font-weight: 800; }
 
-    nav { display: flex; align-items: center; gap: 18px; }
-    nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; align-items: center; }
-    nav a { text-decoration: none; color: var(--dark); font-weight: 600; cursor: pointer; transition: color 0.2s; }
-    nav a:hover { color: var(--blue-1); }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .brand h1 {
+      font-size: 20px;
+      color: var(--blue-2);
+      margin: 0;
+      font-weight: 800;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--blue-1);
+    }
 
     /* Mobile toggle */
-    .nav-toggle { display: none; width: 44px; height: 44px; border-radius: 10px; align-items: center; justify-content: center; cursor: pointer; border: none; background: transparent; }
-    .hamburger { width: 22px; height: 2px; background: var(--dark); position: relative; display: block; transition: all .28s ease; }
-    .hamburger::before, .hamburger::after { content: ''; position: absolute; left: 0; right: 0; height: 2px; background: var(--dark); transition: all .28s ease; display: block; }
-    .hamburger::before { top: -7px; }
-    .hamburger::after { bottom: -7px; }
+    .nav-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
 
-    .nav-toggle.open .hamburger { background: transparent; }
-    .nav-toggle.open .hamburger::before { transform: translateY(7px) rotate(45deg); top: 0; }
-    .nav-toggle.open .hamburger::after { transform: translateY(-7px) rotate(-45deg); bottom: 0; }
+    .hamburger {
+      width: 22px;
+      height: 2px;
+      background: var(--dark);
+      position: relative;
+      display: block;
+      transition: all .28s ease;
+    }
+
+    .hamburger::before,
+    .hamburger::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--dark);
+      transition: all .28s ease;
+      display: block;
+    }
+
+    .hamburger::before {
+      top: -7px;
+    }
+
+    .hamburger::after {
+      bottom: -7px;
+    }
+
+    .nav-toggle.open .hamburger {
+      background: transparent;
+    }
+
+    .nav-toggle.open .hamburger::before {
+      transform: translateY(7px) rotate(45deg);
+      top: 0;
+    }
+
+    .nav-toggle.open .hamburger::after {
+      transform: translateY(-7px) rotate(-45deg);
+      bottom: 0;
+    }
 
     /* Mobile menu panel */
     .mobile-menu {
-      display: none; position: absolute; top: 100%; left: 0; width: 100%;
-      background: rgba(255,255,255,0.98); box-shadow: 0 10px 30px rgba(8,44,51,0.08);
-      padding: 12px 0; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; z-index: 110;
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 10px 30px rgba(8, 44, 51, 0.08);
+      padding: 12px 0;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      z-index: 110;
     }
-    .mobile-menu.open { display: block; }
-    .mobile-menu ul { list-style: none; margin: 0; padding: 8px 18px; display: flex; flex-direction: column; gap: 8px; }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 8px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
     .mobile-menu a {
-      display: block; padding: 14px 12px; border-radius: 10px;
-      text-decoration: none; 
-      color: var(--dark); font-weight: 700; font-size: 16px;
-      background: transparent; transition: background 0.2s, color 0.2s;
+      display: block;
+      padding: 14px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 700;
+      font-size: 16px;
+      background: transparent;
+      transition: background 0.2s, color 0.2s;
     }
-    .mobile-menu a:hover { background: rgba(0,168,232,0.06); color: var(--blue-2); }
+
+    .mobile-menu a:hover {
+      background: rgba(0, 168, 232, 0.06);
+      color: var(--blue-2);
+    }
 
     /* Hero */
-    .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 44px; align-items: center; padding: 80px 0 60px; }
-    .hero-content h2 { font-size: 44px; margin-bottom: 16px; color: var(--dark); line-height: 1.1; }
-    .hero-content p { color: var(--muted); margin-bottom: 24px; font-size: 18px; }
-    .btn { padding: 12px 24px; border-radius: 12px; font-weight: 700; border: none; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.25s; text-align: center; }
-    .btn-primary { background: linear-gradient(90deg, var(--blue-1), var(--blue-2)); color: #fff; box-shadow: 0 8px 20px rgba(0,168,232,0.15); }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,168,232,0.2); }
-    .btn-secondary { background: var(--white); color: var(--dark); border: 1px solid rgba(8,44,51,0.08); }
-    .btn-secondary:hover { background: #f8fafb; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 44px;
+      align-items: center;
+      padding: 80px 0 60px;
+    }
 
-    .hero-image { position: relative; height: 380px; display: flex; align-items: center; justify-content: center; }
+    .hero-content h2 {
+      font-size: 44px;
+      margin-bottom: 16px;
+      color: var(--dark);
+      line-height: 1.1;
+    }
+
+    .hero-content p {
+      color: var(--muted);
+      margin-bottom: 24px;
+      font-size: 18px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.25s;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--blue-1), var(--blue-2));
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(0, 168, 232, 0.15);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 168, 232, 0.2);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--dark);
+      border: 1px solid rgba(8, 44, 51, 0.08);
+    }
+
+    .btn-secondary:hover {
+      background: #f8fafb;
+    }
+
+    .hero-image {
+      position: relative;
+      height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     /* Imagen principal */
     .float-main {
-      width: 100%; height: 100%; object-fit: cover; border-radius: 16px; box-shadow: var(--shadow);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
       animation: floatVertical 6s ease-in-out infinite;
-      position: relative; z-index: 3;
+      position: relative;
+      z-index: 3;
     }
 
     /* Imágenes decorativas actualizadas */
-    .float-deco { position: absolute; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 30px rgba(8,44,51,0.1); opacity: 0; z-index: 2; pointer-events: none; }
-    .deco-1 { width: 45%; top: 5%; left: -8%; transform: rotate(-6deg); animation: decoAnim1 9s ease-in-out infinite; }
-    .deco-2 { width: 40%; bottom: -5%; right: -8%; transform: rotate(8deg); animation: decoAnim2 7.5s ease-in-out infinite; }
+    .float-deco {
+      position: absolute;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(8, 44, 51, 0.1);
+      opacity: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .deco-1 {
+      width: 45%;
+      top: 5%;
+      left: -8%;
+      transform: rotate(-6deg);
+      animation: decoAnim1 9s ease-in-out infinite;
+    }
+
+    .deco-2 {
+      width: 40%;
+      bottom: -5%;
+      right: -8%;
+      transform: rotate(8deg);
+      animation: decoAnim2 7.5s ease-in-out infinite;
+    }
 
     @keyframes floatVertical {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
     }
+
     @keyframes decoAnim1 {
-      0% { transform: translateY(0) rotate(-6deg); opacity: 0; }
-      10%, 90% { opacity: 1; }
-      50% { transform: translateY(-25px) rotate(-10deg); opacity: 1; }
-      100% { transform: translateY(0) rotate(-6deg); opacity: 0; }
+      0% {
+        transform: translateY(0) rotate(-6deg);
+        opacity: 0;
+      }
+
+      10%,
+      90% {
+        opacity: 1;
+      }
+
+      50% {
+        transform: translateY(-25px) rotate(-10deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(0) rotate(-6deg);
+        opacity: 0;
+      }
     }
+
     @keyframes decoAnim2 {
-      0% { transform: translateY(0) rotate(8deg); opacity: 0; }
-      15%, 85% { opacity: 1; }
-      50% { transform: translateY(-15px) rotate(12deg); opacity: 1; }
-      100% { transform: translateY(0) rotate(8deg); opacity: 0; }
+      0% {
+        transform: translateY(0) rotate(8deg);
+        opacity: 0;
+      }
+
+      15%,
+      85% {
+        opacity: 1;
+      }
+
+      50% {
+        transform: translateY(-15px) rotate(12deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(0) rotate(8deg);
+        opacity: 0;
+      }
     }
 
     /* Sections */
-    section { padding: 80px 0; }
-    .section-title { text-align: center; margin-bottom: 48px; }
-    .grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-    .card { background: white; padding: 30px; border-radius: 14px; box-shadow: var(--shadow); transition: transform 0.3s; }
-    .card:hover { transform: translateY(-8px); }
-    .card.problem { border-left: 5px solid var(--orange); }
-    .card.solution { border-left: 5px solid var(--blue-1); }
+    section {
+      padding: 80px 0;
+    }
 
-    .demo-cta { background: var(--dark); color: white; padding: 40px; border-radius: 16px; text-align: center; }
-    .demo-cta .btn-primary { background: var(--orange); box-shadow: none; }
+    .section-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
 
-    footer { background: var(--dark); color: #fff; text-align: center; padding: 60px 0 30px; }
+    .grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card.problem {
+      border-left: 5px solid var(--orange);
+    }
+
+    .card.solution {
+      border-left: 5px solid var(--blue-1);
+    }
+
+    .demo-cta {
+      background: var(--dark);
+      color: white;
+      padding: 40px;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .demo-cta .btn-primary {
+      background: var(--orange);
+      box-shadow: none;
+    }
+
+    footer {
+      background: var(--dark);
+      color: #fff;
+      text-align: center;
+      padding: 60px 0 30px;
+    }
 
     /* Reveal animation */
-    .reveal { opacity: 0; transform: translateY(25px); transition: all 0.8s cubic-bezier(0.2, 0.9, 0.2, 1); }
-    .reveal.active { opacity: 1; transform: translateY(0); }
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: all 0.8s cubic-bezier(0.2, 0.9, 0.2, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* Responsive */
     @media (max-width: 992px) {
-      nav ul { display: none; }
-      .nav-toggle { display: flex; }
-      .hero { grid-template-columns: 1fr; text-align: left; padding: 60px 0; }
-      .hero-image { height: 320px; margin-top: 30px; }
+      nav ul {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: left;
+        padding: 60px 0;
+      }
+
+      .hero-image {
+        height: 320px;
+        margin-top: 30px;
+      }
     }
 
     @media (max-width: 600px) {
-      .hero-content h2 { font-size: 32px; }
-      .float-deco { display: none; }
+      .hero-content h2 {
+        font-size: 32px;
+      }
+
+      .float-deco {
+        display: none;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -182,12 +504,14 @@
           <li><a href="#about" data-scroll>Nosotros</a></li>
           <li><a href="#problems" data-scroll>Problemas</a></li>
           <li><a href="#solution" data-scroll>Solución</a></li>
-          <li><a href="https://justtouch-website-demo.onrender.com" target="_blank" rel="noopener noreferrer">Demo</a></li>
+          <li><a href="https://justtouch-website-demo.onrender.com" target="_blank" rel="noopener noreferrer">Demo</a>
+          </li>
         </ul>
       </nav>
 
       <div style="display: flex; align-items: center; gap: 12px;">
-        <a href="https://calendly.com/franmadev8/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Agendar Meet</a>
+        <a href="https://calendly.com/franmadev8/30min" class="btn btn-primary" target="_blank"
+          rel="noopener noreferrer">Agendar Meet</a>
         <button id="navToggle" class="nav-toggle" aria-label="Menú">
           <span class="hamburger"></span>
         </button>
@@ -198,8 +522,10 @@
           <li><a href="#about" data-scroll>Nosotros</a></li>
           <li><a href="#problems" data-scroll>Problemas</a></li>
           <li><a href="#solution" data-scroll>Solución</a></li>
-          <li><a href="https://justtouch-website-demo.onrender.com" target="_blank" rel="noopener noreferrer">Demo</a></li>
-          <li><a href="https://calendly.com/franmadev8/30min" target="_blank" rel="noopener noreferrer">Agendar Meet</a></li>
+          <li><a href="https://justtouch-website-demo.onrender.com" target="_blank" rel="noopener noreferrer">Demo</a>
+          </li>
+          <li><a href="https://calendly.com/franmadev8/30min" target="_blank" rel="noopener noreferrer">Agendar Meet</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -210,22 +536,30 @@
     <section class="container hero">
       <div class="hero-content">
         <h2>El Menú Digital que tu Restaurante merece.</h2>
-        <p>Moderniza tu atención, reduce errores y aumenta tus ventas con una plataforma intuitiva y profesional. Sin instalaciones, directo al navegador del cliente.</p>
+        <p>Moderniza tu atención, reduce errores y aumenta tus ventas con una plataforma intuitiva y profesional. Sin
+          instalaciones, directo al navegador del cliente.</p>
         <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a class="btn btn-primary" href="https://calendly.com/franmadev8/30min" target="_blank" rel="noopener noreferrer">Agendar Llamada 1 a 1</a>
-          <a class="btn btn-secondary" href="https://justtouch-website-demo.onrender.com" target="_blank" rel="noopener noreferrer">Ir a la Demo Gratis</a>
+          <a class="btn btn-primary" href="https://calendly.com/franmadev8/30min" target="_blank"
+            rel="noopener noreferrer">Agendar Llamada 1 a 1</a>
+          <a class="btn btn-secondary" href="https://justtouch-website-demo.onrender.com" target="_blank"
+            rel="noopener noreferrer">Ir a la Demo Gratis</a>
         </div>
       </div>
 
       <div class="hero-image">
         <!-- Imagen principal (Restaurante) -->
-        <img class="float-main" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="Restaurante">
-        
+        <img class="float-main"
+          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"
+          alt="Restaurante">
+
         <!-- Imagen decorativa 1 (Hamburguesa Gourmet) -->
-        <img class="float-deco deco-1" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" alt="Hamburguesa Gourmet">
-        
+        <img class="float-deco deco-1"
+          src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80"
+          alt="Hamburguesa Gourmet">
+
         <!-- Imagen decorativa 2 (Postre / Dulce) -->
-        <img class="float-deco deco-2" src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=80" alt="Postre">
+        <img class="float-deco deco-2"
+          src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=80" alt="Postre">
       </div>
     </section>
 
@@ -233,16 +567,19 @@
     <section id="about" class="container reveal">
       <div class="section-title">
         <h3>Acerca de JustTouch</h3>
-        <p>Somos la herramienta definitiva para la digitalización gastronómica, enfocados en la simplicidad y la eficiencia.</p>
+        <p>Somos la herramienta definitiva para la digitalización gastronómica, enfocados en la simplicidad y la
+          eficiencia.</p>
       </div>
       <div class="grid">
         <div class="card">
           <h4>Nuestra Visión</h4>
-          <p>Eliminar las barreras entre el comensal y su pedido, creando una experiencia fluida y visualmente atractiva.</p>
+          <p>Eliminar las barreras entre el comensal y su pedido, creando una experiencia fluida y visualmente
+            atractiva.</p>
         </div>
         <div class="card">
           <h4>Tecnología</h4>
-          <p>Utilizamos las últimas tecnologías web para asegurar que tu menú cargue al instante en cualquier smartphone.</p>
+          <p>Utilizamos las últimas tecnologías web para asegurar que tu menú cargue al instante en cualquier
+            smartphone.</p>
         </div>
       </div>
     </section>
@@ -282,7 +619,8 @@
         </div>
         <div class="card solution">
           <h4>Pedidos QR Inteligentes</h4>
-          <p>El cliente escanea, elige y pide. Menos carga de trabajo para tu personal y más comodidad para el cliente.</p>
+          <p>El cliente escanea, elige y pide. Menos carga de trabajo para tu personal y más comodidad para el cliente.
+          </p>
         </div>
         <div class="card solution">
           <h4>Panel de Estadísticas</h4>
@@ -295,16 +633,21 @@
     <section class="container reveal">
       <div class="demo-cta">
         <h3>Experimenta JustTouch ahora</h3>
-        <p style="margin: 12px 0 24px; opacity: 0.9;">Hemos preparado una demo interactiva para que veas exactamente lo que tus clientes sentirán al usar nuestro menú digital.</p>
-        <a class="btn btn-primary" href="https://justtouch-website-demo.onrender.com" target="_blank" rel="noopener noreferrer">Probar Demo Interactiva</a>
+        <p style="margin: 12px 0 24px; opacity: 0.9;">Hemos preparado una demo interactiva para que veas exactamente lo
+          que tus clientes sentirán al usar nuestro menú digital.</p>
+        <a class="btn btn-primary" href="https://justtouch-website-demo.onrender.com" target="_blank"
+          rel="noopener noreferrer">Probar Demo Interactiva</a>
       </div>
     </section>
 
     <!-- Final CTA -->
     <section class="container reveal" style="text-align: center;">
       <h3>¿Listo para dar el salto digital?</h3>
-      <p style="margin-bottom: 20px;">Únete a los cientos de restaurantes que ya optimizan su operación con JustTouch.</p>
-      <a href="https://calendly.com/franmadev8/30min" class="btn btn-primary" style="font-size: 18px; padding: 14px 32px;" target="_blank" rel="noopener noreferrer">Agendar mi Meet de 30 min</a>
+      <p style="margin-bottom: 20px;">Únete a los cientos de restaurantes que ya optimizan su operación con JustTouch.
+      </p>
+      <a href="https://calendly.com/franmadev8/30min" class="btn btn-primary"
+        style="font-size: 18px; padding: 14px 32px;" target="_blank" rel="noopener noreferrer">Agendar mi Meet de 30
+        min</a>
     </section>
   </main>
 
@@ -312,7 +655,8 @@
     <div class="container">
       <img src="assets/JustTouchLogo.png" alt="Logo" style="height: 60px; margin-bottom: 15px;">
       <p>JustTouch — El futuro de la restauración es hoy.</p>
-      <p style="font-size: 13px; opacity: 0.7; margin-top: 10px;">© <span id="year"></span> JustTouch SaaS. Todos los derechos reservados.</p>
+      <p style="font-size: 13px; opacity: 0.7; margin-top: 10px;">© <span id="year"></span> JustTouch SaaS. Todos los
+        derechos reservados.</p>
     </div>
   </footer>
 
@@ -368,4 +712,5 @@
     reveals.forEach(r => observer.observe(r));
   </script>
 </body>
+
 </html>
